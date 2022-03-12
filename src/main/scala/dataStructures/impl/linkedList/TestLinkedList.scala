@@ -5,7 +5,7 @@ import dataStructures.impl.Node
 object TestLinkedList {
   def main(args: Array[String]): Unit = {
     val ll = new LinkedList()
-    ll.head = new Node()
+    ll.head = new Node(-1)
     val head = ll.head
 
     // Insert data in LinkedList
@@ -31,6 +31,9 @@ object TestLinkedList {
     ll.deleteAtIndex(9)
 
     // Length of LinkedList
-    println(s"Length of LinkedList is: ${ll.length}")
+    println(s"Length of LinkedList is: ${ll.length}\n")
+
+    // Delete nth item from LinkedList
+    ll.reverse()
   }
 }

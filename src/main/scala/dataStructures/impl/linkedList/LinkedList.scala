@@ -5,14 +5,22 @@ import dataStructures.impl.Node
 class LinkedList {
   var head : Node = null
 
+  // Initialize LinkedList
+  def initialize(data: Int) : Unit = {
+    if(head == null){
+      val newNode : Node = new Node(data)
+      head = newNode
+    }
+  }
+
   // Print the LinkedList
   def printList() : Unit = {
     var ptr = this.head
     var counter = 1
-    var msg = ""
+    var msg = "head ---> "
     while(ptr != null){
       if(counter == 1)
-        msg = "head"
+        msg = msg + s"${head.data}"
       else
         msg = msg + " ---> " + ptr.data
       counter += 1
@@ -24,9 +32,13 @@ class LinkedList {
 
   // Add an element at the beginning
   def push(data: Int) : Unit = {
-    val newNode = new Node(data)
-    newNode.next = head.next
-    head.next = newNode
+    if(head == null)
+      initialize(data)
+    else {
+      val newNode = new Node(data)
+      newNode.next = head.next
+      head.next = newNode
+    }
 
     // Print output
     printList()
@@ -34,12 +46,16 @@ class LinkedList {
 
   // Add element at the end
   def append(data: Int) : Unit = {
-    val newNode = new Node(data)
-    var pointer = head
-    while(pointer.next != null)
-      pointer = pointer.next
+    if(head == null)
+      initialize(data)
+    else {
+      val newNode = new Node(data)
+      var pointer = head
+      while (pointer.next != null)
+        pointer = pointer.next
 
-    pointer.next = newNode
+      pointer.next = newNode
+    }
 
     // Print output
     printList()
@@ -65,14 +81,19 @@ class LinkedList {
   // Add array to LinkedList; appends at the end of the LinkedList
   def appendArray(arr: Array[Int]) : Unit = {
     // Go to the end
-    var pointer = head
-    while(pointer.next != null)
-      pointer = pointer.next
+    var pointer : Node = null
 
     // Insert elements one by one
     for(elem <- arr){
-      append(elem)
+      // If LinkedList is empty, initialize it with first element of the array
+      if(head == null)
+        initialize(elem)
+      else
+        append(elem)
     }
+
+    // Print the output
+    printList()
   }
 
   // Delete a given item from LinkedList
@@ -118,6 +139,7 @@ class LinkedList {
     printList()
   }
 
+  // Returns the length of the LinkedList
   def length: Int = {
     var pointer = head
     var counter = 0
@@ -126,5 +148,24 @@ class LinkedList {
       counter += 1
     }
     counter
+  }
+
+  // Reverse the LinkedList
+  def reverse() : Unit = {
+    var curr : Node = head
+    var prev : Node = null
+    var temp : Node = null
+
+    while(curr != null){
+      temp = curr.next
+      curr.next = prev
+      prev = curr
+      curr = temp
+    }
+    // Reassign the head
+    head = prev
+
+    // Print output
+    printList()
   }
 }

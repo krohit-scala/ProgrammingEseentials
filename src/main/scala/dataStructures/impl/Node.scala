@@ -1,6 +1,6 @@
 package dataStructures.impl
 
-class Node(_data: Int = Int.MinValue){
+class Node(_data: Int){
   var data = _data
   var next : Node = null
 
