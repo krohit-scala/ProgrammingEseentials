@@ -80,9 +80,6 @@ class LinkedList {
 
   // Add array to LinkedList; appends at the end of the LinkedList
   def appendArray(arr: Array[Int]) : Unit = {
-    // Go to the end
-    var pointer : Node = null
-
     // Insert elements one by one
     for(elem <- arr){
       // If LinkedList is empty, initialize it with first element of the array
