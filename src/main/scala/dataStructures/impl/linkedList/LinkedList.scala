@@ -36,8 +36,12 @@ class LinkedList {
       initialize(data)
     else {
       val newNode = new Node(data)
-      newNode.next = head.next
-      head.next = newNode
+      // #1: Not needed anymore; Updated Below
+      // newNode.next = head.next
+      // head.next = newNode
+
+      newNode.next = head
+      head = newNode
     }
 
     // Print output

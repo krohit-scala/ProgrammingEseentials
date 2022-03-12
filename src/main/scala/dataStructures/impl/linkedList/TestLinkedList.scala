@@ -5,7 +5,7 @@ import dataStructures.impl.Node
 object TestLinkedList {
   def main(args: Array[String]): Unit = {
     val ll = new LinkedList()
-    ll.head = new Node(-1)
+    // ll.head = new Node(-1)  // #1: Not needed anymore
     val head = ll.head
 
     // Insert data in LinkedList

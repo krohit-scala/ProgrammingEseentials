@@ -21,7 +21,7 @@ object MergeSortedLinkedList {
     var head2 = ll2.head
 
     // Print to confirm if heads are right
-    println(s"head1.data: ${head1.data}, head2.data: ${head2.data}")
+    // println(s"head1.next.data: ${head1.next.data}, head2.data: ${head2.next.data}")
 
     // Head and pointers for the merged LinkedList
     var mll : LinkedList = new LinkedList()
