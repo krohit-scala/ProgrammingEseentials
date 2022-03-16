@@ -1,24 +1,25 @@
 package dataStructures.impl
 
 class Node(_data: Int){
-  var data = _data
+  var data : Int = _data
   var next : Node = null
+
+  // Auxiliary Constructor
+  def this(_data : Int, _next : Node) {
+    this(_data)
+    // this.data = _data
+    this.next = _next
+  }
 
   // Function to traverse through the list
   // Starts from the pointer location on the list
-  def printList(head: Node) : Unit = {
-    var ptr = head
-    var counter = 1
-    var msg = ""
-    while(ptr != null){
-      if(counter == 1)
-        msg = "head"
-      else
-        msg = msg + " ---> " + ptr.data
-      counter += 1
-      ptr = ptr.next
+  def printList : Unit = {
+    var pointer = this
+    val arr1 = scala.collection.mutable.ArrayBuffer[Int]()
+    while(pointer != null){
+      arr1.append(pointer.data)
+      pointer = pointer.next
     }
-    msg = msg + " ---> end"
-    println(s"LIST OUTPUT: \n$msg\n")
+    println(s"LinkedList: ${arr1.mkString(" ---> ")}")
   }
 }
