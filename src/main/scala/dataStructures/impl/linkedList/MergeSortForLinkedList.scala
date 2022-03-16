@@ -5,7 +5,7 @@ import dataStructures.impl.Node
 object MergeSortForLinkedList {
 
   // Takes sorted LinkedList as arguments and returns merged LinkedList
-  def mergeSortInternals(left: Node, right: Node): Node = {
+  def mergeSortInternals(left: Node, right: Node) : Node = {
     // Base cases
     if(left == null)
       return right
@@ -32,7 +32,7 @@ object MergeSortForLinkedList {
 
   // Takes a LinkedList as argument and break it down from mid point
   // More optimized - O(n)
-  def divideInHalves(head: Node): (Node, Node) = {
+  def divideInHalves(head: Node) : (Node, Node) = {
     // Base case
     if(head == null || head.next == null)
       return (head, null)
@@ -86,7 +86,7 @@ object MergeSortForLinkedList {
   }
 
   // Method to apply merge sort
-  def mergeSort(head: Node): Node = {
+  def mergeSort(head: Node) : Node = {
     // Check for base cases
     if(head == null || head.next == null)
       return head
@@ -104,7 +104,7 @@ object MergeSortForLinkedList {
     mergeSortInternals(left, right)
   }
 
-  def main(args: Array[String]): Unit = {
+  def main(args: Array[String]) : Unit = {
     // Create the head of the LinkedList
     var head : Node = null
 
