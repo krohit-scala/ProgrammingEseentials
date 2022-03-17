@@ -8,25 +8,26 @@ object ReverseLinkedListInGroup {
     var head : Node = _head
     var prev : Node = null
     var curr : Node = head
-    var temp : Node = null
+    var next : Node = null
 
     var counter = 0
     // Reverse till the k-th element
     while(curr != null && counter < k){
       counter += 1
-      temp = curr.next
+      next = curr.next
       curr.next = prev
       prev = curr
-      curr = temp
+      curr = next
     }
     // If there are more than K elements, reverse them too
-    if(temp != null)
-      head.next = reverseLinkedListInGroup(temp, k)
+    if(next != null)
+      head.next = reverseLinkedListInGroup(next, k)
     prev
   }
 
   def main(args: Array[String]): Unit = {
-    var arr = Array[Int](1,2,3,4,5,6,7,8,9,10,11).reverse
+    // Create a LinkedList
+    val arr = 1.to(10).reverse
     var head : Node = null
     for(elem <- arr){
       head = new Node(elem, head)
