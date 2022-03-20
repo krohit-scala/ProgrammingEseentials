@@ -28,15 +28,19 @@ object DLL {
     dll.deleteFirstElement
     dll.printList
 
-    dll.deleteLastElement
-    dll.deleteLastElement
-    dll.deleteLastElement
-    dll.deleteLastElement
-    dll.deleteLastElement
-    dll.deleteLastElement
+    // Clear the LinkedList
+    dll.clear
     dll.printList
     println(dll.length)
 
-
+    // Add more elements
+    dll.appendArray(1.to(5).toArray)
+    dll.printList
+    println(dll.length)
+    dll.removeAt(10)
+    dll.removeAt(4)
+    dll.removeAt(5)
+    dll.removeAt(0)
+    dll.printList
   }
 }

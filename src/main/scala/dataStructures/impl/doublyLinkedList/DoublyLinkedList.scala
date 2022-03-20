@@ -111,6 +111,7 @@ class DoublyLinkedList {
       return
     // If only one element
     if(head != null && head.next == null) {
+      head = null
       lengthDecrement
       return
     }
@@ -124,5 +125,37 @@ class DoublyLinkedList {
     }
     prev.next = null
     lengthDecrement
+  }
+
+  // Delete element at a given index in the LinkedList
+  def removeAt(index: Int) : Unit = {
+    // Base check
+    if(index > length-1)
+      println(s"Error: Invalid index! Index (${index}) is not in range [0, ${length-1}]")
+    else if(index == 0){
+      deleteFirstElement
+    }else if(index == this.length-1){
+      deleteLastElement
+    }
+    else{
+      var counter = -1
+      var pointer : Node = head
+      var prev : Node = null
+      while(pointer != null && counter < index){
+        counter += 1
+        prev = pointer
+        pointer = pointer.next
+      }
+      // At the given index
+      prev.next = pointer.next
+      pointer.next.prev = prev
+      lengthDecrement
+    }
+  }
+
+  // Flush the LinkedList
+  def clear : Unit = {
+    this.head = null
+    this.length = 0
   }
 }
