@@ -10,11 +10,5 @@ class Node(_data : Int, _next : Node){
     this.data = _data
   }
 
-  // Auxiliary Constructor
-  def this() {
-    this(null, null)
-    this.data = null
-    this.next = _next
-  }
 }
 
