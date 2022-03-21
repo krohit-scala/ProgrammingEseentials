@@ -4,6 +4,7 @@ import dataStructures.impl.Node
 
 object DetectAndRemoveLoop {
 
+  // Helper method for Floyd Loop Detection algo
   def removeLoop(_slow: Node, _head: Node): Node = {
     var meet : Node = _slow       // Node where slow and fast pointers met
     var curr : Node = _head       // Head of original LinkedList
@@ -29,6 +30,7 @@ object DetectAndRemoveLoop {
     _head
   }
 
+  // Floyd algo to detect and remove loop
   def detectLoopUsingFloydAlgo(_head: Node): Node = {
     val head : Node = _head
     var slow : Node = head
@@ -46,6 +48,7 @@ object DetectAndRemoveLoop {
     head
   }
 
+  // Detect and remove loops using HashSet
   def detectLoopUsingHashmap(_head: Node): Node = {
     var head = _head
     var set = scala.collection.mutable.HashSet[Node]()
@@ -91,7 +94,7 @@ object DetectAndRemoveLoop {
     head1 = detectLoopUsingFloydAlgo(head1)
     head1.printList
 
-//    head2 = detectLoopUsingHashmap(head2)
-//    head2.printList
+    head2 = detectLoopUsingHashmap(head2)
+    head2.printList
   }
 }
