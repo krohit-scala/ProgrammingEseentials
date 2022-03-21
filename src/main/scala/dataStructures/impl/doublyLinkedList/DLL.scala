@@ -2,6 +2,7 @@ package dataStructures.impl.doublyLinkedList
 
 object DLL {
   def main(args: Array[String]): Unit = {
+    // Instantiate the DoublyLinkedList
     var dll = new DoublyLinkedList()
 
     // Push element at the beginning

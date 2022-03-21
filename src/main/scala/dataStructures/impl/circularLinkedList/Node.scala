@@ -9,6 +9,5 @@ class Node(_data : Int, _next : Node){
     this(_data, null)
     this.data = _data
   }
-
 }
 
