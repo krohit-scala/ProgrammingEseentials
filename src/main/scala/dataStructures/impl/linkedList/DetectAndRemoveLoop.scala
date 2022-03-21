@@ -5,26 +5,44 @@ import dataStructures.impl.Node
 object DetectAndRemoveLoop {
 
   def removeLoop(_slow: Node, _head: Node): Node = {
-    ???
+    var meet : Node = _slow       // Node where slow and fast pointers met
+    var curr : Node = _head       // Head of original LinkedList
+    var loopStart : Node = null   // Pointer to detect the point at which the loop starts
+    var prev : Node = null        // Pointer to node which points to loopStart
+    // Find node where the loop starts
+    // Traverse till meet pointer meets with the curr pointer
+    while(meet != curr){
+      prev = meet
+      curr = curr.next
+      meet = meet.next
+    }
+    // When meet == curr, this is the starting point of loop
+    loopStart = curr
+    prev.next = null
+    // If we want to use one more loop instead of prev pointer
+    // Loop again to reach the node which points loopStart
+    // while(meet.next != loopStart)
+    //   meet = meet.next
+
+    // When we are at the end of the looping element
+    // meet.next = null
+    _head
   }
 
   def detectLoopUsingFloydAlgo(_head: Node): Node = {
-    var head : Node = _head
+    val head : Node = _head
     var slow : Node = head
-    var fast : Node = head.next
+    var fast : Node = head
 
+    // Fast and slow counters will meet some time
     while(fast != null && slow != null){
       slow = slow.next
       fast = fast.next.next
 
       // Loop Detected
-      if(slow == fast){
-        slow = slow.next
-        fast = fast.next
+      if(slow == fast)
         return removeLoop(slow, head)
-      }
     }
-    slow.next = null
     head
   }
 
@@ -70,10 +88,10 @@ object DetectAndRemoveLoop {
     // head2.printList
 
     println("After loop")
-//    head1 = detectLoopUsingFloydAlgo(head1)
-//    head1.printList
+    head1 = detectLoopUsingFloydAlgo(head1)
+    head1.printList
 
-    head2 = detectLoopUsingHashmap(head2)
-    head2.printList
+//    head2 = detectLoopUsingHashmap(head2)
+//    head2.printList
   }
 }
