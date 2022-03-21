@@ -4,13 +4,26 @@ import dataStructures.impl.Node
 
 class LinkedList {
   var head : Node = null
+  var length : Int = 0
 
   // Initialize LinkedList
   def initialize(data: Int) : Unit = {
     if(head == null){
       val newNode : Node = new Node(data)
       head = newNode
+      lengthIncrement
     }
+  }
+
+  // Increment the length
+  def lengthIncrement : Unit = {this.length += 1}
+
+  // Increment the length
+  def lengthDecrement : Unit = {
+    if(this.length > 0)
+      this.length -= 1
+    else
+      this.length = 0
   }
 
   // Print the LinkedList
@@ -36,14 +49,10 @@ class LinkedList {
       initialize(data)
     else {
       val newNode = new Node(data)
-      // #1: Not needed anymore; Updated Below
-      // newNode.next = head.next
-      // head.next = newNode
-
       newNode.next = head
       head = newNode
+      lengthIncrement
     }
-
     // Print output
     printList()
   }
@@ -59,6 +68,7 @@ class LinkedList {
         pointer = pointer.next
 
       pointer.next = newNode
+      lengthIncrement
     }
 
     // Print output
@@ -76,6 +86,7 @@ class LinkedList {
       val newNode = new Node(data)
       newNode.next = pointer.next
       pointer.next = newNode
+      lengthIncrement
     }
 
     // Print output
@@ -87,10 +98,7 @@ class LinkedList {
     // Insert elements one by one
     for(elem <- arr){
       // If LinkedList is empty, initialize it with first element of the array
-      if(head == null)
-        initialize(elem)
-      else
-        append(elem)
+      this.append(elem)
     }
 
     // Print the output
@@ -112,6 +120,7 @@ class LinkedList {
       println(s"ERROR: Cannot delete item [${item}]! Item does not exist!")
     else{
       prev.next = pointer.next
+      lengthDecrement
     }
 
     // Print the output
@@ -132,14 +141,16 @@ class LinkedList {
     if(counter < index)
       println(s"ERROR: Cannot delete. Index [${index}] exceeds the index range for the elements [0 to ${counter}]!\n")
     else{
-      println(s"PointerIndex: ${counter}")
       prev.next = pointer.next
+      lengthDecrement
     }
 
     // Print the output
     printList()
   }
 
+  /*
+  // Not needed anymore
   // Returns the length of the LinkedList
   def length: Int = {
     var pointer = head
@@ -150,6 +161,7 @@ class LinkedList {
     }
     counter
   }
+  */
 
   // Reverse the LinkedList
   def reverse() : Unit = {
