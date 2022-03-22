@@ -12,10 +12,6 @@ object MergeSortForLinkedList {
     if(right == null)
       return left
 
-    // Pointers on left and right LinkedLists
-    var p1 = left
-    var p2 = right
-
     var head : Node = null
     if (left.data <= right.data) {
       head = left
