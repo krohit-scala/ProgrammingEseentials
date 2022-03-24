@@ -2,7 +2,7 @@ package dataStructures.impl.linkedList
 
 // Given a LinkedList, L1 = {A1, A2, A3, ..., An}
 // Modify it, without using extra space as, L1 = {A1, An, A2, An-1, A3, ...}
-object ReorderLinkedList {
+object ReorderLinkedListV1 {
 
   def divideInHalves(list: LinkedList): (LinkedList, LinkedList) = {
     var head = list.head
