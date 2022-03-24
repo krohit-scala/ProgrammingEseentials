@@ -1,7 +1,5 @@
 package dataStructures.impl.linkedList
 
-import dataStructures.impl.Node
-
 object DetectAndRemoveLoop {
 
   // Helper method for Floyd Loop Detection algo

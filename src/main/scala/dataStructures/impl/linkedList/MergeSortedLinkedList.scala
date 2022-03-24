@@ -1,7 +1,5 @@
 package dataStructures.impl.linkedList
 
-import dataStructures.impl.Node
-
 object MergeSortedLinkedList {
   def main(args: Array[String]): Unit = {
     // Create 2 arrays

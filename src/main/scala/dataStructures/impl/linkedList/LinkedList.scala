@@ -1,7 +1,5 @@
 package dataStructures.impl.linkedList
 
-import dataStructures.impl.Node
-
 class LinkedList {
   var head : Node = null
   var length : Int = 0

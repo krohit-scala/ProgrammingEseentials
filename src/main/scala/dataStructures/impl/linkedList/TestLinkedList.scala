@@ -1,7 +1,5 @@
 package dataStructures.impl.linkedList
 
-import dataStructures.impl.Node
-
 object TestLinkedList {
   def main(args: Array[String]): Unit = {
     val ll = new LinkedList()

@@ -1,11 +1,9 @@
 package dataStructures.impl.linkedList
 
-import dataStructures.impl.Node
-
 object RotateLinkedList {
 
   // Brute force approach
-  def rotateLinkedListBruteForce(_head: Node, k: Int): _root_.dataStructures.impl.Node = {
+  def rotateLinkedListBruteForce(_head: Node, k: Int): Node = {
     // Base check
     if(_head == null || _head.next == null)
       return _head

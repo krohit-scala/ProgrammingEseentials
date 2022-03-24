@@ -1,7 +1,5 @@
 package dataStructures.impl.linkedList
 
-import dataStructures.impl.Node
-
 object ReverseLinkedList {
   def main(args: Array[String]): Unit = {
     var head = new Node(1)

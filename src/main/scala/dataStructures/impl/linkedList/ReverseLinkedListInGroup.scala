@@ -1,7 +1,5 @@
 package dataStructures.impl.linkedList
 
-import dataStructures.impl.Node
-
 object ReverseLinkedListInGroup {
   // Reverse the LinkedList in groups of K
   def reverseLinkedListInGroup(_head: Node, k: Int): Node = {

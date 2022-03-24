@@ -1,4 +1,4 @@
-package dataStructures.impl
+package dataStructures.impl.linkedList
 
 class Node(_data: Int){
   var data : Int = _data

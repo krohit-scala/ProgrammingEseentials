@@ -1,7 +1,5 @@
 package dataStructures.impl.linkedList
 
-import dataStructures.impl.Node
-
 object MergeSortForLinkedList {
 
   // Takes sorted LinkedList as arguments and returns merged LinkedList

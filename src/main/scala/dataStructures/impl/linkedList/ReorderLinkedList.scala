@@ -1,7 +1,5 @@
 package dataStructures.impl.linkedList
 
-import dataStructures.impl.Node
-
 // Given a LinkedList, L1 = {A1, A2, A3, ..., An}
 // Modify it, without using extra space as, L1 = {A1, An, A2, An-1, A3, ...}
 object ReorderLinkedList {
@@ -12,7 +10,7 @@ object ReorderLinkedList {
     var fast : Node = head
 
     // Reach the middle of the LinkedList
-    while(fast.next ! = null){
+    while(fast.next != null){
       slow = slow.next
       fast = fast.next
       if(fast.next != null)
@@ -42,13 +40,21 @@ object ReorderLinkedList {
 
     var p1 = h1.head
     var p2 = h2.head
+    var p1Next : Node = null
+    var p2Next : Node = null
+    while(p2 != null && p2.next != null){
+      println(s"P1.data: ${p1.data}, ${p2.data}")
+      // Keep track of next nodes
+      p1Next = p1.next
+      p2Next = p2.next
 
-    while(p1 != null || p2 != null){
-      var t1 = p1.next
-      var t2 = p2.next
       p1.next = p2
-      p2.next = t1
+      p2.next = p1Next
 
+      p2 = p2Next
+      p1 = p1Next
     }
+    h1.printList
+
   }
 }
