@@ -25,7 +25,7 @@ class LinkedList {
   }
 
   // Print the LinkedList
-  def printList() : Unit = {
+  def printList : Unit = {
     var ptr = this.head
     var counter = 1
     var msg = "head ---> "
@@ -52,7 +52,7 @@ class LinkedList {
       lengthIncrement
     }
     // Print output
-    printList()
+    // printList()
   }
 
   // Add element at the end
@@ -70,7 +70,7 @@ class LinkedList {
     }
 
     // Print output
-    printList()
+    // printList()
   }
 
   // Add element after a given element
@@ -88,7 +88,7 @@ class LinkedList {
     }
 
     // Print output
-    printList()
+    // printList()
   }
 
   // Add array to LinkedList; appends at the end of the LinkedList
@@ -100,7 +100,7 @@ class LinkedList {
     }
 
     // Print the output
-    printList()
+    printList
   }
 
   // Delete a given item from LinkedList
@@ -122,7 +122,7 @@ class LinkedList {
     }
 
     // Print the output
-    printList()
+    // printList()
   }
 
   // Delete an item at a given index
@@ -144,22 +144,19 @@ class LinkedList {
     }
 
     // Print the output
-    printList()
+    // printList()
   }
 
-  /*
-  // Not needed anymore
   // Returns the length of the LinkedList
-  def length: Int = {
+  def getLength: Int = {
     var pointer = head
-    var counter = 0
+    var counter = if(head != null) 1 else 0
     while(pointer.next != null) {
       pointer = pointer.next
       counter += 1
     }
     counter
   }
-  */
 
   // Reverse the LinkedList
   def reverse() : Unit = {
@@ -177,6 +174,36 @@ class LinkedList {
     head = prev
 
     // Print output
-    printList()
+    printList
+  }
+
+  // Divide a LinkedList into two equal halves
+  // P.S.: The original LinkedList is divided
+  def divideInHalves : (LinkedList, LinkedList) = {
+    var head : Node = this.head
+    var slow : Node = this.head
+    var fast : Node = this.head
+
+    while(fast.next != null){
+      slow = slow.next
+      fast = fast.next
+      if(fast.next != null)
+        fast = fast.next
+    }
+
+    val h1 : Node = head
+    val h2 : Node = slow.next
+    slow.next = null
+
+    val l1 = new LinkedList()
+    val l2 = new LinkedList()
+    l1.head = h1
+    l2.head = h2
+    l1.length = l1.getLength
+    l2.length = l2.getLength
+
+    this.length = this.getLength
+    // Return the LinkedLists
+    (l1, l2)
   }
 }

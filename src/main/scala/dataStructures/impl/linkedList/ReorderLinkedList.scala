@@ -55,6 +55,5 @@ object ReorderLinkedList {
       p1 = p1Next
     }
     h1.printList
-
   }
 }

@@ -21,7 +21,7 @@ object MergeSortedLinkedList {
     // Print to confirm if heads are right
     // println(s"head1.next.data: ${head1.next.data}, head2.data: ${head2.next.data}")
     var mll : LinkedList = mergeSortedLinkedLists(head1, head2)
-    mll.printList()
+    mll.printList
   }
 
   def mergeSortedLinkedLists(h1: Node, h2: Node) : LinkedList = {
