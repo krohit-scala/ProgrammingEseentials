@@ -48,8 +48,9 @@ object ReorderLinkedListV2 {
     val right : Node = _head.next   // 2nd Node of the LinkedList
     val tail : Node = right.next    // Rest of the LinkedList Nodes after 2nd Node
 
-    head = right        // Now head points the 2nd Node
-    right.next = left   // Now 2nd Node points the 1st Node
+    // Swap the 1st two Nodes of the LinkedList
+    head = right                    // Now head points the 2nd Node
+    right.next = left               // Now 2nd Node points the 1st Node
 
     // Make the 1st Node point to the tail (rest of the reversed in pair LinkedList)
     left.next = reverseInPairsSwappingNodes(tail)
