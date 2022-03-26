@@ -6,7 +6,7 @@ object TestStack {
     var stack = new StackArray()
 
     // Top of the empty Stack
-    var msg = stack.peek match{
+    var msg = stack.peek1 match{
       case Some(x) => x
       case None => "Error: Stack is empty!"
     }

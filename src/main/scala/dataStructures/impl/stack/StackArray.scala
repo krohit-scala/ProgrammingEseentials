@@ -48,7 +48,7 @@ class StackArray {
     this.top = this.top + 1
     this.len += 1
     this.arr(this.top) = item
-    println(this.printStack)
+    // println(this.printStack)
   }
 
   // Push array to the Stack
@@ -58,9 +58,13 @@ class StackArray {
   }
 
   // Method to see the element on the top of the Stack
-  def peek : Option[Int] = if(!this.isEmpty) Some(this.arr(this.top)) else None
+  def peek : Int = this.arr(this.top)
+
+  // Method to see the element on the top of the Stack
+  def peek1 : Option[Int] = if(!this.isEmpty) Some(this.arr(this.top)) else None
 
   /*
+  // Null handling done, real implementation doesn't need this.
   // Method to remove element from Stack
   def pop : Option[Int] = {
     if(!this.isEmpty){
