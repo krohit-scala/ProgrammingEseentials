@@ -1,6 +1,6 @@
 package dataStructures.impl.stack
 
-object TestStack {
+object TestStackArray {
   def main(args: Array[String]): Unit = {
     // Get the Stack object
     var stack = new StackArray()

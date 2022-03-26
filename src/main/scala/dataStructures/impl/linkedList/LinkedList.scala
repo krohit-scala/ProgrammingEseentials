@@ -126,6 +126,32 @@ class LinkedList {
   }
 
   // Delete an item at a given index
+  def deleteFirstElement : Unit = {
+    if(this.head != null) {
+      this.head = this.head.next
+      lengthDecrement
+    }
+    // Print the output
+    // printList()
+  }
+
+  // Delete an item at a given index
+  def deleteLastElement : Unit = {
+    var pointer = head
+    var prev = head
+    while(pointer.next != null){
+      prev = pointer
+      pointer = pointer.next
+    }
+
+    prev.next = null
+    lengthDecrement
+
+    // Print the output
+    // printList()
+  }
+
+  // Delete an item at a given index
   def deleteAtIndex(index: Int) : Unit = {
     var pointer = head
     var prev = head
