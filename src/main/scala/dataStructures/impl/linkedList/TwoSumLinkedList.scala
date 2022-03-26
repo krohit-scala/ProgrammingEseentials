@@ -11,7 +11,7 @@ object TwoSumLinkedList {
     val start = 0
     val end = 9
     val rnd = new scala.util.Random
-    val temp = start + rnd.nextInt( (end - start) + 1 )
+    val temp = start + rnd.nextInt((end - start) + 1)
     temp
   }
 
@@ -21,9 +21,9 @@ object TwoSumLinkedList {
     val l2 = new LinkedList()
     val n1 = 10
     val n2 = 5
-    for(i <- 0.until(n1))
+    for(_ <- 0.until(n1))
       l1.append(getRandInt)
-    for(i <- 0.until(n2))
+    for(_ <- 0.until(n2))
       l2.append(getRandInt)
 
   }
