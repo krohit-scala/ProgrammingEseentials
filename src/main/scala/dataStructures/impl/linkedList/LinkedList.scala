@@ -17,12 +17,10 @@ class LinkedList {
   def lengthIncrement : Unit = {this.length += 1}
 
   // Increment the length
-  def lengthDecrement : Unit = {
-    if(this.length > 0)
+  def lengthDecrement : Unit = if(this.length > 0)
       this.length -= 1
     else
       this.length = 0
-  }
 
   // Print the LinkedList
   def printList : Unit = {
@@ -51,8 +49,6 @@ class LinkedList {
       head = newNode
       lengthIncrement
     }
-    // Print output
-    // printList()
   }
 
   // Add element at the end
@@ -68,9 +64,6 @@ class LinkedList {
       pointer.next = newNode
       lengthIncrement
     }
-
-    // Print output
-    // printList()
   }
 
   // Add element after a given element
@@ -86,9 +79,6 @@ class LinkedList {
       pointer.next = newNode
       lengthIncrement
     }
-
-    // Print output
-    // printList()
   }
 
   // Add array to LinkedList; appends at the end of the LinkedList
@@ -120,9 +110,6 @@ class LinkedList {
       prev.next = pointer.next
       lengthDecrement
     }
-
-    // Print the output
-    // printList()
   }
 
   // Delete an item at a given index
@@ -131,8 +118,6 @@ class LinkedList {
       this.head = this.head.next
       lengthDecrement
     }
-    // Print the output
-    // printList()
   }
 
   // Delete an item at a given index
@@ -146,9 +131,6 @@ class LinkedList {
 
     prev.next = null
     lengthDecrement
-
-    // Print the output
-    // printList()
   }
 
   // Delete an item at a given index
@@ -168,9 +150,6 @@ class LinkedList {
       prev.next = pointer.next
       lengthDecrement
     }
-
-    // Print the output
-    // printList()
   }
 
   // Returns the length of the LinkedList
