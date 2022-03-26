@@ -12,8 +12,8 @@ class StackLinkedList {
   def pushArray(arr: Array[Int]) : Unit = {
     for(elem <- arr) {
       this.push(elem)
-      this.ll.printList
     }
+    this.ll.printList
   }
 
   // Return element of the Stack
@@ -39,4 +39,11 @@ class StackLinkedList {
       true
     else
       false
+
+  // Print contents of a Stack
+  def printStack : Unit = this.ll.printList
+
+  // Clear the Stack
+  // Remove all elements
+  def clearStack : Unit = this.ll.clear()
 }

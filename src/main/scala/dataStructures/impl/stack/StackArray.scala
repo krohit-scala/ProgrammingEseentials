@@ -28,7 +28,7 @@ class StackArray {
     // Increase the capacity
     this.capacity *= 2
     // Create temp array with twice the size and copy old values
-    var tempArr = Array.fill(this.capacity){-1}
+    val tempArr = Array.fill(this.capacity){-1}
     for(i <- 0.until(this.len))
       tempArr(i) = this.arr(i)
 
@@ -54,7 +54,7 @@ class StackArray {
   // Push array to the Stack
   def pushArray(arr : Array[Int]) : Unit = {
     for(item <- arr)
-    this.push(item)
+      this.push(item)
   }
 
   // Method to see the element on the top of the Stack
@@ -92,5 +92,13 @@ class StackArray {
     }
     else
       throw new NullPointerException("ERROR: Cannot pop an empty Stack!")
+  }
+
+  // Clear the Stack
+  // Remove all elements
+  def clear : Unit = {
+    this.arr = Array.fill(10){-1}
+    this.len = 0
+    this.capacity = 1
   }
 }

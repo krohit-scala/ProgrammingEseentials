@@ -13,6 +13,12 @@ object TestStackLinkedList {
     val arr = 0.to(4).toArray
     stack.pushArray(arr)
 
+    stack.clearStack
+    stack.printStack
+
+    val arr1 = 5.to(12).toArray
+    stack.pushArray(arr1)
+
     println(s"Element at the top: ${stack.peek}")
 
     // Popping a non-empty Stack
@@ -21,6 +27,6 @@ object TestStackLinkedList {
 
     // Pop an empty Stack
     // print(stack.pop) // NullPointerException: ERROR: Cannot pop an empty Stack!
-    println(s"\nStackEmpty: ${stack.isEmpty}\n" + stack.ll.printList)
+    println(s"\nStackEmpty: ${stack.isEmpty}\n" + stack.printStack)
   }
 }

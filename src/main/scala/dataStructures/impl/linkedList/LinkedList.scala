@@ -211,4 +211,10 @@ class LinkedList {
     // Return the LinkedLists
     (l1, l2)
   }
+
+  // Clear the LinkedList
+  def clear(): Unit = {
+    this.head = null
+    this.length = 0
+  }
 }
