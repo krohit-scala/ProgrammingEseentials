@@ -36,7 +36,7 @@ class LinkedList {
       ptr = ptr.next
     }
     msg = msg + " ---> end"
-    println(s"LIST OUTPUT: \n$msg\n")
+    println(s"$msg\n")
   }
 
   // Add an element at the beginning
