@@ -40,6 +40,9 @@ class StackLinkedList {
     else
       false
 
+  // Check if Stack is not empty
+  def isNotEmpty : Boolean = !(this.isEmpty)
+
   // Print contents of a Stack
   def printStack : Unit = this.ll.printList
 
