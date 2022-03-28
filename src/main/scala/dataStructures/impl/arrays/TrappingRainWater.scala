@@ -24,9 +24,9 @@ object TrappingRainWater {
       right(i) = maxRight
     }
 
-    println(s"Orig Arr : ${arr.mkString(", ")}")
-    println(s"Max Left : ${left.mkString(", ")}")
-    println(s"Max Right : ${right.mkString(", ")}")
+    // println(s"Orig Arr : ${arr.mkString(", ")}")
+    // println(s"Max Left : ${left.mkString(", ")}")
+    // println(s"Max Right : ${right.mkString(", ")}")
 
     var res = 0
     for(i <- 0 until n)
