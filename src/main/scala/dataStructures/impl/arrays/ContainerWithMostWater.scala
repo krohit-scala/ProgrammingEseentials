@@ -1,7 +1,7 @@
 package dataStructures.impl.arrays
 
 object ContainerWithMostWater {
-
+  // Function to find the largest area where the water could be contained
   def containerWithMostWater(arr: Array[Int]): Int = {
     var left = 0
     var right = arr.length - 1
