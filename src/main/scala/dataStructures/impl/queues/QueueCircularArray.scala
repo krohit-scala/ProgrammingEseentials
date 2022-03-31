@@ -89,7 +89,7 @@ class QueueCircularArray {
   def dequeue : Int = {
     // Check if Queue is empty
     if(this.isEmpty)
-      throw new Exception(s"Error: Cannot dequeue an empty queue...")
+      throw new NullPointerException(s"Error: Cannot dequeue an empty queue...")
     else{
       val elem = this.arr(this.front)
 
@@ -124,8 +124,9 @@ class QueueCircularArray {
         temp.append(arr(index))
         index = (index + 1) % this.capacity
       }
+      // Add the last element of the Queue
       temp.append(this.arr(index))
-      s"front --> ${temp.mkString(" >> ")} <-- rear\nLength: ${this.length}\n"
+      s"\nfront --> ${temp.mkString(" >> ")} <-- rear\nLength: ${this.length}\n"
     }
     else
       "\nError: Queue is empty!\n"

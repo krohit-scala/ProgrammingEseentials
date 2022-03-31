@@ -163,6 +163,15 @@ class LinkedList {
     counter
   }
 
+  // Get the last element of the LinkedList
+  def getLast : Node = {
+    var pointer : Node = this.head
+    while(pointer.next != null)
+      pointer = pointer.next
+
+    pointer
+  }
+
   // Reverse the LinkedList
   def reverse() : Unit = {
     var curr : Node = head
