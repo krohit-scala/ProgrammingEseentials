@@ -1,12 +1,13 @@
 package dataStructures.impl.queues
 
+// This class does the implementation of Queue using  Array
 class QueueArray {
   var arr : Array[Int] = Array.fill(1){-1}
   var capacity : Int = 1
   var rear : Int = -1
   var length : Int = 0
 
-  // front not needed, as deletion would happen at the index 0 only
+  // 'front' not needed as deletion would happen at the index 0 only
 
   // Resize the Queue
   def resize : Unit = {
@@ -58,6 +59,7 @@ class QueueArray {
   def dequeue : Int = {
     // Dequeue happens at the 0-th index
     val elem = this.arr(0)
+    // Shift the element by 1 bit
     for(i <- 0.until(this.length))
       arr(i) = arr(i+1)
     this.rear -= 1

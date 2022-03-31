@@ -14,10 +14,9 @@ class QueuesCircularArray {
   var rear : Int = -1
 
   // Is Queue empty
-  def isEmpty : Boolean = if(this.front == -1 && this.rear == -1)
-      true
-    else
-      false
+  def isEmpty : Boolean = {
+    this.front == -1 && this.rear == -1
+  }
 
   // Is Queue non-empty
   def isNotEmpty : Boolean = { !this.isEmpty }
@@ -77,6 +76,6 @@ class QueuesCircularArray {
       println(s"rear --> ${temp.mkString(" >> ")} <-- top\nLength: ${this.length}")
     }
     else
-      println("Error: Queue is empty...")
+      println("Error: Queue is empty!")
   }
 }
