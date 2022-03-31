@@ -21,6 +21,9 @@ class QueueCircularArray {
   // Is Queue non-empty
   def isNotEmpty : Boolean = { !this.isEmpty }
 
+  // Check if Queue contains only 1 element
+  def containsOnlyOneElement : Boolean = {this.front == this.rear}
+
   // Is Queue full
   def isFull : Boolean = {
     (this.rear + 1) % this.capacity == this.front
@@ -57,7 +60,7 @@ class QueueCircularArray {
       index += 1
     }
 
-    // Reassign references
+    // Reassign references and update stats values
     this.front = 0
     this.rear = index - 1
     this.capacity *= 2
@@ -67,7 +70,7 @@ class QueueCircularArray {
 
   // Enqueue into the Queue
   def enqueue(item : Int) : Unit = {
-    if(this.isFull || (this.front == 0 && this.rear == 0))
+    if(this.isFull || this.containsOnlyOneElement)
       this.resize
 
     // Check if Queue contains zero elements, reset front to 0
@@ -92,7 +95,7 @@ class QueueCircularArray {
 
       // Check if Queue contains just one element
       // If front == rear
-      if(this.front == this.rear) {
+      if(this.containsOnlyOneElement) {
         this.front = -1
         this.rear = -1
       }
@@ -119,7 +122,6 @@ class QueueCircularArray {
 
       while(index != this.rear) {
         temp.append(arr(index))
-        // println(s"Element in Queue: ${arr(index)}")
         index = (index + 1) % this.capacity
       }
       temp.append(this.arr(index))
