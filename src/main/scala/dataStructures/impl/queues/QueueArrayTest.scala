@@ -6,7 +6,12 @@ object QueueArrayTest {
     // Before enqueuing an array
     println(q.printQueue)
 
-    // Enqueue in action
+    // Enqueueing elements one at a time
+    for(i <- 1 to 7 by 3){
+      q.enqueue(i)
+      println(s"Front element: ${q.getFront}, Rear element: ${q.getRear}, Size of Queue: ${q.getSize}")
+    }
+    // Enqueue array  in action
     q.enqueueArray(3.to(20).by(2).toArray)
 
     // After enqueuing an array
@@ -14,10 +19,10 @@ object QueueArrayTest {
 
     // Dequeue in action
     while(q.isNotEmpty) {
-      println(s"Dequeue gave: ${q.dequeue}, Size of Queue: ${q.getSize}")
+      println(s"Front element: ${q.getFront}, Rear element: ${q.getRear}, Dequeue gave: ${q.dequeue}, Size of Queue: ${q.getSize}")
     }
 
-    // After dequeuing the Queue
+    // After de-queueing the Queue
     println(q.printQueue)
   }
 }

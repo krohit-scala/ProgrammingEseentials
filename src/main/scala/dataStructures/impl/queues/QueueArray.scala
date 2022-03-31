@@ -67,6 +67,22 @@ class QueueArray {
     elem
   }
 
+  // Get the front element
+  def getFront : Int = {
+    if(this.isNotEmpty)
+      this.arr(0)
+    else
+      throw new NullPointerException("Error: Queue is empty!")
+  }
+
+  // Get the rear element
+  def getRear : Int = {
+    if(this.isNotEmpty)
+      this.arr(this.rear)
+    else
+      throw new NullPointerException("Error: Queue is empty!")
+  }
+
   // Get the length of the Queue
   def getSize : Int = {
     this.length
@@ -75,10 +91,10 @@ class QueueArray {
   // Print the queue:
   def printQueue : String = {
     if(this.isEmpty)
-      return "Error: Queue is empty!"
+      return "\nError: Queue is empty!"
 
     // If Queue is not empty, get the elements from the Queue
     val data = for(i <- 0.until(this.length)) yield this.arr(i)
-    "front --> " + data.mkString(" -- ") + " <-- rear"
+    "\nfront --> " + data.mkString(" -- ") + " <-- rear\n"
   }
 }
