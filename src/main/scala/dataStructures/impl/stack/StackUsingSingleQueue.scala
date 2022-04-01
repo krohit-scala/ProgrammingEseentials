@@ -31,15 +31,22 @@ class StackUsingSingleQueue {
   }
 
   // Peek into the Stack's top element
-  def peek : Int = {this.q.getFront}
+  def peek : Int = if(this.q.isNotEmpty)
+      this.q.getFront
+    else
+      throw new Exception("Error: Stack is empty!")
 
   // Pop the top element of the Stack
   def pop : Int = {
-    // Get the element at the top
-    val res = this.q.dequeue
-    this.length -= 1
+    if(this.q.isNotEmpty) {
+      // Get the element at the top
+      val res = this.q.dequeue
+      this.length -= 1
 
-    // Return the result
-    res
+      // Return the result
+      res
+    }
+    else
+      throw new Exception("Error: Stack is empty!")
   }
 }

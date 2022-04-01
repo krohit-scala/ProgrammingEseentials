@@ -39,7 +39,7 @@ class StackUsingMultipleQueues {
   def peek : Int = if(q1.isNotEmpty)
     this.q1.getFront
   else
-    throw new NullPointerException("Error: Stack is empty!")
+    throw new Exception("Error: Stack is empty!")
 
   // Get the element from the Stack
   def pop : Int = {
@@ -50,6 +50,6 @@ class StackUsingMultipleQueues {
       res
     }
     else
-      throw new NullPointerException("Error: Stack is empty!")
+      throw new Exception("Error: Stack is empty!")
   }
 }

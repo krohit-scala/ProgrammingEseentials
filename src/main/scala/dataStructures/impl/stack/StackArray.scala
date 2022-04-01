@@ -1,7 +1,7 @@
 package dataStructures.impl.stack
 
 class StackArray {
-  var arr : Array[Int] = Array.fill(10){-1}
+  var arr : Array[Int] = Array.fill(1){-1}
   var len : Int = 0
   var capacity : Int = 1
 
