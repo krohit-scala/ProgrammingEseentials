@@ -194,7 +194,7 @@ class LinkedList {
   // Divide a LinkedList into two equal halves
   // P.S.: The original LinkedList is divided
   def divideInHalves : (LinkedList, LinkedList) = {
-    var head : Node = this.head
+    val head : Node = this.head
     var slow : Node = this.head
     var fast : Node = this.head
 

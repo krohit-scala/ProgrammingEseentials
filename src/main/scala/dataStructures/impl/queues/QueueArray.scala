@@ -59,11 +59,14 @@ class QueueArray {
   def dequeue : Int = {
     // Dequeue happens at the 0-th index
     val elem = this.arr(0)
-    // Shift the element by 1 bit
-    for(i <- 0.until(this.length))
-      arr(i) = arr(i+1)
-    this.rear -= 1
     this.length -=1
+
+    // If length > 1, shift the element by 1 bit towards the left
+    if(this.isNotEmpty && this.length > 1){
+      for (i <- 0.until(this.length))
+        arr(i) = arr(i + 1)
+    }
+    this.rear -= 1
     elem
   }
 
