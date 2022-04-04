@@ -81,4 +81,12 @@ object BinaryTree {
 
     math.max(heightOfTree(root.left), heightOfTree(root.right)) + 1
   }
+
+  def sizeOfTree(root: Node) : Int = {
+    // Base case
+    if(root == null)
+      return 0
+
+    sizeOfTree(root.left) + sizeOfTree(root.right) + 1
+  }
 }

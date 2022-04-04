@@ -11,5 +11,6 @@ object TestBinaryTree {
     println("\n")
 
     println(s"Height of Binary root: ${BinaryTree.heightOfTree(root)}")
+    println(s"Size of Binary root: ${BinaryTree.sizeOfTree(root)}")
   }
 }
