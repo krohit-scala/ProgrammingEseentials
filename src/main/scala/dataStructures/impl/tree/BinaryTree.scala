@@ -73,4 +73,12 @@ object BinaryTree {
     postOrderTraversal(root.right)
     print(s" ${root.data} ")
   }
+
+  def heightOfTree(root: Node) : Int = {
+    // Base case
+    if(root == null)
+      return 0
+
+    math.max(heightOfTree(root.left), heightOfTree(root.right)) + 1
+  }
 }

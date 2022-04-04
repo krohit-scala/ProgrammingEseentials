@@ -2,11 +2,14 @@ package dataStructures.impl.tree
 
 object TestBinaryTree {
   def main(args: Array[String]): Unit = {
-    val tree = BinaryTree.createTree
-    BinaryTree.inOrderTraversal(tree)
-    println("\n\n")
-    BinaryTree.preOrderTraversal(tree)
-    println("\n\n")
-    BinaryTree.postOrderTraversal(tree)
+    val root = BinaryTree.createTree
+    BinaryTree.inOrderTraversal(root)
+    println("\n")
+    BinaryTree.preOrderTraversal(root)
+    println("\n")
+    BinaryTree.postOrderTraversal(root)
+    println("\n")
+
+    println(s"Height of Binary root: ${BinaryTree.heightOfTree(root)}")
   }
 }
