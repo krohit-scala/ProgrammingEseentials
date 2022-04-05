@@ -12,5 +12,7 @@ object TestBinaryTree {
 
     println(s"Height of Binary root: ${BinaryTree.heightOfTree(root)}")
     println(s"Size of Binary root: ${BinaryTree.sizeOfTree(root)}")
+    println(s"Max of Binary root: ${BinaryTree.maxInTree(root)}")
+    println(s"Min of Binary root: ${BinaryTree.minInTree(root)}")
   }
 }

@@ -74,6 +74,7 @@ object BinaryTree {
     print(s" ${root.data} ")
   }
 
+  // Height of a Binary Tree
   def heightOfTree(root: Node) : Int = {
     // Base case
     if(root == null)
@@ -82,11 +83,38 @@ object BinaryTree {
     math.max(heightOfTree(root.left), heightOfTree(root.right)) + 1
   }
 
+  // Size of a Binary Tree
   def sizeOfTree(root: Node) : Int = {
     // Base case
     if(root == null)
       return 0
 
     sizeOfTree(root.left) + sizeOfTree(root.right) + 1
+  }
+
+  // Max of a Binary Tree
+  def maxInTree(root: Node) : Int = {
+    if(root == null)
+      return Int.MinValue
+    math.max(
+      math.max(
+        root.data,
+        maxInTree(root.left)
+      ),
+      maxInTree(root.right)
+    )
+  }
+
+  // Min of a Binary Tree
+  def minInTree(root: Node) : Int = {
+    if(root == null)
+      return Int.MaxValue
+    math.min(
+      math.min(
+        root.data,
+        minInTree(root.left)
+      ),
+      minInTree(root.right)
+    )
   }
 }
