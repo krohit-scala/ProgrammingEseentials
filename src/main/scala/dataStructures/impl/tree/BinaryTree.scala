@@ -1,6 +1,8 @@
 package dataStructures.impl.tree
 
 import java.util.Scanner
+import scala.collection.immutable.HashMap
+import scala.collection.mutable
 
 class BinaryTree {
   var root : Node = null
@@ -116,5 +118,53 @@ object BinaryTree {
       ),
       minInTree(root.right)
     )
+  }
+
+  // Left side view of a Binary Tree
+  def leftSideView(root: Node) : Unit = {
+    var levelViewMap : HashMap[Int, Int] = HashMap[Int, Int]()
+
+    var level = 0
+    getLeftSideView(root, level)
+
+    def getLeftSideView(root: Node, level: Int) : Unit = {
+      if(root == null)
+        return
+
+      if(levelViewMap.getOrElse(level, null) == null)
+        levelViewMap += level-> root.data
+      // Traverse left
+      getLeftSideView(root.left, level+1)
+      getLeftSideView(root.right, level+1)
+    }
+
+    val keys = levelViewMap.keySet.toArray.sorted
+    println()
+    for(level <- keys)
+      println(s">> Level: ${level}, Element: ${levelViewMap.getOrElse(level, -1)}")
+  }
+
+  // Right side view of a Binary Tree
+  def rightSideView(root: Node) : Unit = {
+    var levelViewMap : HashMap[Int, Int] = HashMap[Int, Int]()
+
+    var level = 0
+    getRightSideView(root, level)
+
+    def getRightSideView(root: Node, level: Int) : Unit = {
+      if(root == null)
+        return
+
+      if(levelViewMap.getOrElse(level, null) == null)
+        levelViewMap += level-> root.data
+      // Traverse right
+      getRightSideView(root.right, level+1)
+      getRightSideView(root.left, level+1)
+    }
+
+    val keys = levelViewMap.keySet.toArray.sorted
+    println()
+    for(level <- keys)
+      println(s">> Level: ${level}, Element: ${levelViewMap.getOrElse(level, -1)}")
   }
 }
