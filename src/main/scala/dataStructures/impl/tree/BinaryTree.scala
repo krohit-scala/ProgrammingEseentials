@@ -1,5 +1,7 @@
 package dataStructures.impl.tree
 
+import dataStructures.impl.queues.QueueArray
+
 import java.util.Scanner
 import scala.collection.immutable.HashMap
 import scala.collection.mutable
@@ -74,6 +76,59 @@ object BinaryTree {
     postOrderTraversal(root.left)
     postOrderTraversal(root.right)
     print(s" ${root.data} ")
+  }
+
+  // Level Order Traversal for Binary Tree
+  def levelOrderTraversal(root: Node) : Unit = {
+    val q : mutable.Queue[Node] = new mutable.Queue[Node]()
+    q.enqueue(root)
+
+    // Loop until the Queue gets empty
+    while(!q.isEmpty){
+      val curr = q.dequeue()
+      print(s" ${curr.data} ")
+
+      // Push left if not empty
+      if(curr.left != null)
+        q.enqueue(curr.left)
+      // Push right if not empty
+      if(curr.right != null)
+        q.enqueue(curr.right)
+    }
+  }
+
+  // Level Order Traversal for Binary Tree
+  // All the elements at a given level are in same line
+  def levelOrderTraversalNewLine(root: Node) : Unit = {
+    val q : mutable.Queue[Node] = new mutable.Queue[Node]()
+    q.enqueue(root)
+    // For indicating new level
+    q.enqueue(null)
+
+    // Loop until the Queue gets empty
+    while(!q.isEmpty){
+      val curr = q.dequeue()
+
+      // For indicating new level
+      if(curr == null) {
+        if(q.isEmpty)
+          return
+        else {
+          q.enqueue(null)
+          println()
+        }
+      }
+      else {
+        print(s" ${curr.data} ")
+
+        // Push left if not empty
+        if (curr.left != null)
+          q.enqueue(curr.left)
+        // Push right if not empty
+        if (curr.right != null)
+          q.enqueue(curr.right)
+      }
+    }
   }
 
   // Height of a Binary Tree
