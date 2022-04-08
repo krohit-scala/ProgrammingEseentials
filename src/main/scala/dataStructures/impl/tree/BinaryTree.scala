@@ -8,23 +8,13 @@ import scala.collection.mutable
 
 class BinaryTree {
   var root : Node = null
-
-  // Inserting elements into a Binary Tree
-  def createTree : Node = {
-    print(s"Enter data for root: ")
-    val data = scala.io.StdIn.readInt()
-    this.root = new Node(data)
-    println(s"Data at the root: ${this.root.data}")
-
-    this.root
-  }
 }
 
 object BinaryTree {
   // Inserting elements into a Binary Tree
   def createTree : Node = {
     var root : Node = null
-    print(s"Enter data for root: ")
+    print(s"Enter data for current node: ")
     val data = scala.io.StdIn.readInt()
 
     // Edge case; assuming -1 is used to input no node
@@ -194,7 +184,7 @@ object BinaryTree {
     }
 
     val keys = levelViewMap.keySet.toArray.sorted
-    println()
+    println("\nLeft side view:")
     for(level <- keys)
       println(s">> Level: ${level}, Element: ${levelViewMap.getOrElse(level, -1)}")
   }
@@ -218,7 +208,7 @@ object BinaryTree {
     }
 
     val keys = levelViewMap.keySet.toArray.sorted
-    println()
+    println("\nRight side view:")
     for(level <- keys)
       println(s">> Level: ${level}, Element: ${levelViewMap.getOrElse(level, -1)}")
   }
