@@ -1,8 +1,5 @@
 package dataStructures.impl.tree
 
-import dataStructures.impl.queues.QueueArray
-
-import java.util.Scanner
 import scala.collection.immutable.HashMap
 import scala.collection.mutable
 
@@ -11,6 +8,12 @@ class BinaryTree {
 }
 
 object BinaryTree {
+  // For Top/Bottom View of a Binary Tree
+  class Pair(_hd: Int, _node: Node){
+    var hd : Int = _hd
+    var node : Node = _node
+  }
+
   // Inserting elements into a Binary Tree
   def createTree : Node = {
     var root : Node = null
@@ -213,3 +216,4 @@ object BinaryTree {
       println(s">> Level: ${level}, Element: ${levelViewMap.getOrElse(level, -1)}")
   }
 }
+
