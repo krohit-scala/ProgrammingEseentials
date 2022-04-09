@@ -3,6 +3,7 @@ package dataStructures.impl.tree
 import scala.collection.mutable.HashMap
 
 object DiameterOfBinaryTree {
+  // To keep the height of each Node
   var hashMap : HashMap[Node, Int] = HashMap[Node, Int]()
 
   // Get the height of a given node
@@ -21,7 +22,8 @@ object DiameterOfBinaryTree {
 
     val leftDia = diameter(root.left)
     val rightDia = diameter(root.right)
-    val currHeight = getHeight(root.left) + getHeight(root.right) + 1
+    // val currHeight = getHeight(root.left) + getHeight(root.right) + 1
+    val currHeight = getHeightOptimized(root.left) + getHeightOptimized(root.right) + 1
 
     math.max(
       currHeight,
@@ -30,6 +32,17 @@ object DiameterOfBinaryTree {
   }
 
   // Get the height of a given node
+  // This will lead to a bug
+  // Example:
+  //        3
+  //      /   \
+  //    2       4
+  //          /   \
+  //        1       5
+  // Node: 4, Height: 2
+  // Node: 2, Height: 1
+  // Node: 1, Height: 1
+  // Node: 5, Height: 1
   def getHeightOptimized(root: Node) : Int = {
     if(root == null)
       return 0
@@ -46,6 +59,11 @@ object DiameterOfBinaryTree {
 
   def main(args: Array[String]): Unit = {
     val tree = BinaryTree.createTree
+    println(s"Diameter of Binary Tree: ${diameter(tree)}\n")
+
+    val nodes = hashMap.keySet
+    for(node <- nodes)
+      println(s"Node: ${node.data}, Height: ${hashMap.get(node).get}")
 
   }
 
