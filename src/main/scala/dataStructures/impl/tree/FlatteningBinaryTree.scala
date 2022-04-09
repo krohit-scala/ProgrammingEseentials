@@ -4,7 +4,7 @@ object FlatteningBinaryTree {
   var head : Node = null
   var prev : Node = null
 
-  // Flattening a Binary Tree in In-Order Traversal Order
+  // Flattening a Binary Tree in In-Order (L-N-R) Traversal Order
   // Left should point to previous, right to next
   def flatten(root: Node) : Unit = {
     // Base check
