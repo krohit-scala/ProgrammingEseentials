@@ -26,7 +26,5 @@ object DiameterOfBinaryTreeOptimized {
   def main(args: Array[String]): Unit = {
     val tree = BinaryTree.createTree
     println(s"Diameter of Binary Tree: ${diameter(tree)}\n")
-
-
   }
 }
