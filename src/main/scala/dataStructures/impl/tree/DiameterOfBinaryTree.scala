@@ -22,8 +22,10 @@ object DiameterOfBinaryTree {
 
     val leftDia = diameter(root.left)
     val rightDia = diameter(root.right)
-    // val currHeight = getHeight(root.left) + getHeight(root.right) + 1
-    val currHeight = getHeightOptimized(root.left) + getHeightOptimized(root.right) + 1
+
+    // Choose the method to compute the height
+    // val currHeight = getHeight(root.left) + getHeight(root.right) + 1                  // Time complexity : O[n^2]
+    val currHeight = getHeightOptimized(root.left) + getHeightOptimized(root.right) + 1   // Time complexity : O[nlogn]
 
     math.max(
       currHeight,
@@ -32,7 +34,6 @@ object DiameterOfBinaryTree {
   }
 
   // Get the height of a given node
-  // This will lead to a bug
   // Example:
   //        3
   //      /   \
@@ -43,6 +44,7 @@ object DiameterOfBinaryTree {
   // Node: 2, Height: 1
   // Node: 1, Height: 1
   // Node: 5, Height: 1
+  // Height of Node [2] is relatively 1, but absolutely 2
   def getHeightOptimized(root: Node) : Int = {
     if(root == null)
       return 0
