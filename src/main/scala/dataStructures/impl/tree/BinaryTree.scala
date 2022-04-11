@@ -3,7 +3,8 @@ package dataStructures.impl.tree
 import scala.collection.immutable.HashMap
 import scala.collection.mutable
 
-class BinaryTree {
+@SerialVersionUID(123L)
+class BinaryTree extends Serializable{
   var root : Node = null
 }
 

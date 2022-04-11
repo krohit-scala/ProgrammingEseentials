@@ -1,6 +1,7 @@
 package dataStructures.impl.tree
 
-class Node(_data : Int) {
+@SerialVersionUID(123L)
+class Node(_data : Int) extends Serializable {
   var data : Int = _data
   var left : Node = null
   var right : Node = null
