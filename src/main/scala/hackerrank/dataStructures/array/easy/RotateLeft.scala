@@ -5,16 +5,15 @@ object RotateLeft {
   // WIP
   def rotateLeft(d: Int, arr: Array[Int]): Array[Int] = {
     val n = arr.length
-    for(i <- 0 to n -1 by d){
+    for(i <- 0 to n -1){
       // Target index
-      // val newI = math.abs(i - d) % arr.length
-      val newI = if(i - d >= 0) (i - d) else (i - d + n)
+      val newI = if(i - d >= 0) (i - d) else (i - d + n)%n
 
       // Swap
       val temp = arr(newI)
       arr(newI) = arr(i)
       arr(i) = temp
-      println(s"Temp shift :  [${arr.mkString(", ")}]")
+      // println(s"Temp shift :  [${arr.mkString(", ")}]")
     }
     arr
   }
