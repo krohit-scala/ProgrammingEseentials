@@ -2,20 +2,17 @@ package hackerrank.dataStructures.array.easy
 
 // https://www.hackerrank.com/challenges/array-left-rotation/
 object RotateLeft {
-  // WIP
+  // New Array approach
+  // Time: O[n]; Space: O[n]
   def rotateLeft(d: Int, arr: Array[Int]): Array[Int] = {
     val n = arr.length
+    val arr1 : Array[Int] = Array.fill(n){-1}
     for(i <- 0 to (n -1)){
       // Target index
-      val newI = if((i - d) >= 0) (i - d) else i - d + n
-
-      // Swap
-      val temp = arr(newI)
-      arr(newI) = arr(i)
-      arr(i) = temp
-      // println(s"Temp shift :  [${arr.mkString(", ")}]")
+      val newI = (i - d + n) % n
+      arr1(newI) = arr(i)
     }
-    arr
+    arr1
   }
 
   def main(args: Array[String]): Unit = {
