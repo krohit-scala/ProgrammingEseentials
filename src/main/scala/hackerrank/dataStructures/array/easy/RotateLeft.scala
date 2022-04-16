@@ -5,9 +5,9 @@ object RotateLeft {
   // WIP
   def rotateLeft(d: Int, arr: Array[Int]): Array[Int] = {
     val n = arr.length
-    for(i <- 0 to n -1){
+    for(i <- 0 to (n -1)){
       // Target index
-      val newI = if(i - d >= 0) (i - d) else (i - d + n)%n
+      val newI = if((i - d) >= 0) (i - d) else i - d + n
 
       // Swap
       val temp = arr(newI)
@@ -22,8 +22,5 @@ object RotateLeft {
     val arr = Array(1, 2, 3, 4, 5)
     println(s"Before: [${arr.mkString(", ")}]")
     println(s"After:  [${rotateLeft(2, arr).mkString(", ")}]")
-//    println(s"After:  [${rotateLeft(1, arr).mkString(", ")}]")
-//    println(s"After:  [${rotateLeft(1, arr).mkString(", ")}]")
-    //println(s"After:  [${rotateLeft(3, arr).mkString(", ")}]")
   }
 }
