@@ -7,6 +7,7 @@ object ArrayManipulation {
   def arrayManipulation(n: Int, queries: Array[Array[Int]]): Long = {
     // Write your code here
     val data : Array[Long] = Array.fill(n){0}
+    var maxVal : Long = Int.MinValue
 
     var counter = 0
     // Execute the queries
@@ -18,14 +19,12 @@ object ArrayManipulation {
       val delta = arr(2)
 
       // Apply queries
-      for(i <- start to end)
+      for(i <- start to end) {
         data(i-1) = data(i-1) + delta
+        if(maxVal < data(i-1))
+          maxVal = data(i-1)
+      }
     }
-
-    // Find max val
-    var maxVal : Long = Int.MinValue
-    for(d <- data)
-      if(maxVal < d) maxVal = d
 
     maxVal
   }
