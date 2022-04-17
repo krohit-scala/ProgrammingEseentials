@@ -46,5 +46,4 @@ object TwoDArrayHG {
     // Max sum of hourglass
     println(hourglassSum(arr))
   }
-
 }
