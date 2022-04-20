@@ -17,8 +17,7 @@ object TwoSum {
 
   // Solution in time: O[N], space: O[N]
   def twoSumOptimized(nums: Array[Int], target: Int): Array[Int] = {
-    val numsSet = nums.toSet
-    var map = mutable.HashMap[Int, Int]()
+    val map = mutable.HashMap[Int, Int]()
 
     // Iterate through
     for(i <- 0 until nums.length){
@@ -27,7 +26,7 @@ object TwoSum {
         map += nums(i) -> i
 
       // Check if target exists
-      if(map.getOrElse(target - nums(i), null) != null)
+      if(map.getOrElse(target - nums(i), null) != null  && map.get(target - nums(i)).get != i )
         return Array(map.get(target - nums(i)).get, i)
     }
     null
