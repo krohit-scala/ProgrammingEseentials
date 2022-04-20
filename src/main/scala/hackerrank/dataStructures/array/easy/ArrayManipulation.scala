@@ -13,7 +13,7 @@ object ArrayManipulation {
     // Execute the queries
     for(arr <- queries){
       counter += 1
-      // Query parametersaa
+      // Query parameters
       val start = arr(0)
       val end = arr(1)
       val delta = arr(2)
