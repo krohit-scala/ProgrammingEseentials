@@ -1,4 +1,4 @@
-package hackerrank.dataStructures.array.easy
+package platform.hackerrank.dataStructures.array.easy
 
 // https://www.hackerrank.com/challenges/2d-array/
 object TwoDArrayHG {

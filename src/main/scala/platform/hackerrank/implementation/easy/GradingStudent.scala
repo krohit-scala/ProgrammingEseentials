@@ -1,4 +1,4 @@
-package hackerrank.implementation.easy
+package platform.hackerrank.implementation.easy
 
 object GradingStudent {
   def gradingStudents(grades: Array[Int]): Array[Int] = {
