@@ -10,6 +10,7 @@ object ExponentialSearch {
     println(s"item: ${1}, index: ${exponentialSearch(arr, 1)}")
   }
 
+  // Helper Method
   def binarySearch(arr: Array[Int], l: Int, r: Int, item: Int) : Int = {
     var left = l
     var right = r
