@@ -1,4 +1,4 @@
-package platform.hackerrank.dataStructures.array.easy
+package platforms.hackerrank.dataStructures.array.easy
 
 import scala.collection.mutable
 import scala.collection.mutable.ArrayBuffer

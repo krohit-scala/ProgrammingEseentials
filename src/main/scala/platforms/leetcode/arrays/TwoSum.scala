@@ -1,4 +1,4 @@
-package platform.leetcode.arrays
+package platforms.leetcode.arrays
 
 import scala.collection.mutable
 
