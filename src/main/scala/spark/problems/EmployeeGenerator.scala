@@ -30,6 +30,7 @@ object EmployeeGenerator {
       .load("employee.tsv")
 
     val fixedEmployee = fixEmployee(spark, empDf)
+    // Write the output as TSV for export
 //    fixedEmployee.coalesce(1)
 //      .write
 //      .format("csv")
