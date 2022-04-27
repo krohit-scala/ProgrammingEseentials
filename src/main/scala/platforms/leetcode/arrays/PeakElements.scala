@@ -1,5 +1,7 @@
 package platforms.leetcode.arrays
 
+import interviewPrep.sorting.SelectionSort
+
 object PeakElements {
   // Method to find peak numbers
   // A peak element is an element that is strictly greater than its neighbors.
