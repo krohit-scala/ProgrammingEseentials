@@ -1,6 +1,4 @@
-package platforms.leetcode.arrays
-
-import interviewPrep.sorting.SelectionSort
+package platforms.geeksforgeeks.arrays
 
 // https://practice.geeksforgeeks.org/problems/peak-element/1#
 // https://leetcode.com/problems/find-peak-element/
@@ -49,8 +47,7 @@ object PeakElements {
     }
     index
   }
-
-  def main(args: Array[String]): Unit = {
+    def main(args: Array[String]): Unit = {
     val arr = Array(1,2,1,3,5,6,4)
     val index = findPeakElement(arr)
     println(s"Peak Element at: ${index}")
