@@ -2,6 +2,7 @@ package platforms.hackerrank.dataStructures.array.easy
 
 // https://www.hackerrank.com/challenges/arrays-ds/
 object ReversingArray {
+  // Time complexity: O[N]; Space complexity: O[1]
   def reverseArray(arr: Array[Int]): Array[Int] = {
     val n = arr.length
     for (i <- 0 to (n - 1) / 2) {
