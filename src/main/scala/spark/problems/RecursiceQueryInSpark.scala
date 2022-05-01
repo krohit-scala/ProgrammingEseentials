@@ -73,5 +73,4 @@ object SparkApp {
     // Build hierarchy
     getEmployeeHierarchy(spark, df).show()
   }
-
 }
