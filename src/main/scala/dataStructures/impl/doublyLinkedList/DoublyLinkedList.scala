@@ -9,7 +9,7 @@ class DoublyLinkedList {
   // Print Doubly LinkedList
   def printList: Unit = {
     var pointer : Node = this.head
-    var dataList = ArrayBuffer[Int]()
+    val dataList = ArrayBuffer[Int]()
     while(pointer != null) {
       dataList.append(pointer.data)
       pointer = pointer.next
